@@ -1,0 +1,22 @@
+# Local credentials and runtime config
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated output
+node_modules/
+.next/
+out/
+build/
+coverage/
+
+# Local logs, editor state, and OS files
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+
+# App-local media is generated/imported separately
+app/media/
+# Local test configuration
+app/test.env

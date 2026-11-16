@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coming soon — Goldeneye Developers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:wght@400..700&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <style>
+        .soon { min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 160px 20px 80px; background: var(--ink); color: #fff; }
+        .soon h1 { margin: 12px 0 16px; font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1; font-weight: 600; }
+        .soon p { margin: 0 auto 28px; max-width: 460px; color: #C7C5BD; font-size: 17px; }
+    </style>
+</head>
+<body>
+    <main class="soon">
+        <div>
+            <p class="eyebrow eyebrow--gold" id="soon-eyebrow">Coming soon</p>
+            <h1 class="disp" id="soon-title">This page is on its way.</h1>
+            <p>We’re still building this section. Browse our projects or talk to a relationship manager in the meantime.</p>
+            <div class="btn-row" style="justify-content:center">
+                <a href="index.html" class="btn btn--gold">Back to home</a>
+                <a href="properties.html" class="btn btn--ghost">Browse properties</a>
+            </div>
+        </div>
+    </main>
+    <script>
+        const page = new URLSearchParams(location.search).get('page');
+        if (page) { document.getElementById('soon-eyebrow').textContent = page; document.title = page + ' — coming soon · Goldeneye Developers'; }
+    </script>
+</body>
+</html>

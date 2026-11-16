@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goldeneye Developers — Homes built on proof, not promises</title>
+    <meta name="description" content="RAJUK-approved apartments and planned plot communities across Dhaka, with every land document, price and construction photo out in the open.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:wght@400..700&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/select.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- ========== HEADER (overlay on the home hero, turns solid on scroll) ========== -->
+    <header class="site-header site-header--overlay" id="site-header">
+        <div class="topbar">
+            <div class="container topbar__in">
+                <p class="topbar__offer">
+                    <span class="topbar__tag">OFFER</span>
+                    <span>Book a Goldeneye Riviera apartment before 31 Dec and save up to 10%</span>
+                    <a href="property.html?id=riviera" class="hide-m">See details</a>
+                </p>
+                <div class="topbar__links">
+                    <a href="tel:+8801700000000"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>+880 1700-000000</a>
+                    <a href="mailto:info@goldeneyedev.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>info@goldeneyedev.com</a>
+                    <a href="https://wa.me/8801700000000" class="wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+                    <div class="lang" role="group" aria-label="Language">
+                        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+                        <button type="button" data-lang="bn" aria-pressed="false" lang="bn">বাংলা</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bar">
+            <div class="container bar__in">
+                <a href="index.html" class="logo" aria-label="Goldeneye Developers Limited — home">
+                    <svg class="logo__mark" width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="11"/><path d="M8 22c4.5-6.5 8.6-9.5 13-9.5s8.5 3 13 9.5c-4.5 6.5-8.6 9.5-13 9.5S12.5 28.5 8 22z" fill="none" stroke="#C9A35C" stroke-width="2.2"/><circle cx="21" cy="22" r="4.6" fill="#C9A35C"/><path d="M21 6v4" stroke="#C9A35C" stroke-width="2.2" stroke-linecap="round"/></svg>
+                    <span class="logo__text"><span class="logo__name disp">Goldeneye</span><span class="logo__sub">Developers Ltd</span></span>
+                </a>
+
+                <nav class="nav" aria-label="Primary">
+                    <a href="index.html" class="on" aria-current="page">Home</a>
+                    <button type="button" id="mega-btn" aria-expanded="false" aria-controls="mega">Projects<svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <a href="coming-soon.html?page=About">About</a>
+                    <a href="coming-soon.html?page=Services">Services</a>
+                    <a href="coming-soon.html?page=News">News</a>
+                    <a href="coming-soon.html?page=Careers">Careers</a>
+                    <a href="coming-soon.html?page=Contact">Contact</a>
+                </nav>
+
+                <div class="bar__actions">
+                    <a href="properties.html#saved" class="icon-btn" id="wish-link" aria-label="Saved homes">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg>
+                        <span class="wish-count" id="wish-count" hidden>0</span>
+                    </a>
+                    <a href="#visit" class="btn bar__cta">Book a Site Visit<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    <button type="button" class="icon-btn burger" id="menu-open" aria-label="Open menu" aria-controls="menu" aria-expanded="false">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mega" id="mega" hidden>
+            <div class="container mega__in">
+                <div class="mega__intro">
+                    <p class="eyebrow">Our projects</p>
+                    <h2 class="disp">Five addresses. One standard of care.</h2>
+                    <a href="properties.html">Browse all properties →</a>
+                </div>
+                <div class="mega__grid">
+                    <a href="property.html?id=heights" class="mega__item"><span class="mega__thumb zoom"><img src="images/heights.jpg" alt="Goldeneye Heights tower at sunset" style="object-position:center 30%"></span><span class="mega__name">Goldeneye Heights</span><span class="mega__meta">Bashundhara · Ready to move</span></a>
+                    <a href="property.html?id=riviera" class="mega__item"><span class="mega__thumb zoom"><img src="images/riviera.jpg" alt="Riviera towers beside a lake"></span><span class="mega__name">Goldeneye Riviera</span><span class="mega__meta">Purbachal · 62% built</span></a>
+                    <a href="property.html?id=greenvalley" class="mega__item"><span class="mega__thumb zoom"><img src="images/greenvalley.jpg" alt="Aerial view of Green Valley plots"></span><span class="mega__name">Goldeneye Green Valley</span><span class="mega__meta">Purbachal · Plots selling</span></a>
+                    <a href="property.html?id=orchid" class="mega__item"><span class="mega__thumb zoom"><img src="images/orchid.jpg" alt="Orchid duplex at dusk"></span><span class="mega__name">Goldeneye Orchid</span><span class="mega__meta">Uttara · Limited units</span></a>
+                    <a href="properties.html?project=Horizon" class="mega__item"><span class="mega__thumb zoom"><img src="images/heights.jpg" alt="Horizon commercial tower render" style="object-position:right 80%"></span><span class="mega__name">Goldeneye Horizon</span><span class="mega__meta">Tejgaon · Launching 2027</span></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full-screen mobile / tablet menu -->
+    <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+        <div class="menu__top">
+            <span class="logo__name disp">Goldeneye</span>
+            <button type="button" class="menu__close" id="menu-close" aria-label="Close menu">×</button>
+        </div>
+        <nav aria-label="Mobile">
+            <a href="index.html" class="disp">Home</a>
+            <a href="properties.html" class="disp">Projects</a>
+            <a href="coming-soon.html?page=About" class="disp">About</a>
+            <a href="coming-soon.html?page=Services" class="disp soft">Services</a>
+            <a href="coming-soon.html?page=News" class="disp soft">News</a>
+            <a href="coming-soon.html?page=Careers" class="disp soft">Careers</a>
+            <a href="coming-soon.html?page=Contact" class="disp">Contact</a>
+        </nav>
+        <div class="menu__foot">
+            <a href="tel:+8801700000000">Call</a>
+            <a href="https://wa.me/8801700000000" class="wa">WhatsApp</a>
+            <a href="#visit" class="visit">Book a Site Visit</a>
+        </div>
+    </div>
+
+    <main id="main">
+        <!-- ========== HERO ========== -->
+        <section class="hero" aria-label="Introduction">
+            <div class="hero__bg">
+                <img class="kb" src="images/heights.jpg" alt="Goldeneye Heights, a 15-storey residence in Bashundhara, glowing at golden hour" fetchpriority="high">
+                <div class="hero__shade"></div>
+            </div>
+
+            <div class="container hero__body">
+                <div class="hero__copy">
+                    <p class="hero__kicker fade">Since 2009 · 12 projects handed over</p>
+                    <h1 class="disp">
+                        <span class="ln"><span>Homes built</span></span>
+                        <span class="ln d1"><span>on <em class="ul">proof</em>,</span></span>
+                        <span class="ln d2"><span>not promises.</span></span>
+                    </h1>
+                    <p class="hero__lead fade2">RAJUK-approved apartments and planned plot communities across Dhaka — with every land document, price and construction photo out in the open.</p>
+                    <ul class="hero__proof fade3">
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>RAJUK-approved layouts</li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Fixed price in writing</li>
+                        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Documents shared before booking</li>
+                    </ul>
+                </div>
+
+                <a href="property.html?id=riviera" class="live lift fade2" aria-label="Goldeneye Riviera construction, 62% complete">
+                    <span class="live__head"><span class="live__dot">Now building</span><span>Live</span></span>
+                    <span class="live__row">
+                        <img src="images/riviera.jpg" alt="">
+                        <span><span class="live__name disp">Goldeneye Riviera</span><span class="live__sub">Purbachal · Floor 11 of 18 cast</span></span>
+                    </span>
+                    <span class="live__track" aria-hidden="true"><span class="live__fill" data-fill="62"></span></span>
+                    <span class="live__foot"><span>62% complete</span><span>Updated 28 Oct →</span></span>
+                </a>
+            </div>
+
+            <div class="container finder">
+                <div class="finder__tabs" role="tablist" aria-label="Property category" id="finder-tabs"></div>
+                <form class="finder__form" id="finder-form" aria-label="Find a property" action="properties.html" method="get">
+                    <div class="field"><label for="f-area">Location</label>
+                        <select id="f-area" name="area"><option value="">All of Dhaka</option><option>Bashundhara</option><option>Purbachal</option><option>Uttara</option><option>Tejgaon</option></select></div>
+                    <div class="field"><label for="f-project">Project</label>
+                        <select id="f-project" name="project"></select></div>
+                    <div class="field"><label for="f-budget">Budget</label>
+                        <select id="f-budget" name="budget">
+                            <option value="">Any budget</option><option value="u75l">Under ৳75 Lakh</option><option value="75l-1.5c">৳75 Lakh – ৳1.5 Crore</option><option value="1.5c-3c">৳1.5 – ৳3 Crore</option><option value="3c+">Above ৳3 Crore</option>
+                        </select></div>
+                    <div class="field"><label for="f-size" id="f-size-label">Size</label>
+                        <select id="f-size" name="size"></select></div>
+                    <input type="hidden" name="cat" id="f-cat" value="Apartment">
+                    <button type="submit" class="btn btn--ink finder__go" id="finder-go">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span id="finder-go-label">Search apartments</span>
+                    </button>
+                </form>
+                <p class="finder__hint">Not sure yet? <a href="properties.html">Browse all 12 listings</a><span aria-hidden="true">·</span><a href="#visit">Book a free site visit</a></p>
+            </div>
+        </section>
+
+        <!-- ========== LEDGER ========== -->
+        <section class="section container" aria-labelledby="ledger-h" id="ledger">
+            <div class="sec-head" data-reveal>
+                <h2 id="ledger-h" class="disp h-l">Four things you can check before you pay a single taka.</h2>
+                <a href="coming-soon.html?page=About" class="link-arrow">How we verify every project →</a>
+            </div>
+            <div class="ledger">
+                <article data-reveal><span class="disp num ledger__n">01</span><h3>RAJUK-approved designs</h3><p>The approval number and sanctioned drawings sit on every project page — not just “approved”.</p></article>
+                <article data-reveal><span class="disp num ledger__n">02</span><h3>Clear land documents</h3><p>CS, SA, RS and BS khatian, mutation and 25-year title chain — shared with your lawyer before booking.</p></article>
+                <article data-reveal><span class="disp num ledger__n">03</span><h3>On-time handover</h3><p>11 of our 12 projects handed over on or before the contract date. The twelfth paid rent compensation.</p></article>
+                <article data-reveal><span class="disp num ledger__n">04</span><h3>After-sales that answers</h3><p>Two-year structural and fittings warranty, with a named service engineer for each building.</p></article>
+            </div>
+        </section>
+
+        <!-- ========== FLAGSHIP PROJECTS ========== -->
+        <section class="section section--projects" aria-labelledby="proj-h" id="projects">
+            <div class="container sec-head" data-reveal>
+                <div>
+                    <p class="eyebrow">Flagship projects</p>
+                    <h2 id="proj-h" class="disp h-xl2">Five addresses across Dhaka</h2>
+                </div>
+                <div class="chips" role="group" aria-label="Filter projects" id="proj-filters"></div>
+            </div>
+            <div class="rail">
+                <div class="rail__track noscroll" id="proj-track" tabindex="0" aria-label="Projects, scroll horizontally"></div>
+                <div class="container rail__ctrl">
+                    <p class="rail__count num" id="proj-count" aria-live="polite"></p>
+                    <div class="rail__btns">
+                        <button type="button" class="round-btn" id="proj-prev" aria-label="Previous projects"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+                        <button type="button" class="round-btn" id="proj-next" aria-label="Next projects"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT TEASER ========== -->
+        <section class="section container about" aria-labelledby="about-h" id="about">
+            <div class="about__art" data-reveal>
+                <div class="about__main zoom"><img src="images/interior.jpg" alt="Bright living room in a handed-over Goldeneye apartment" loading="lazy"></div>
+                <div class="about__inset zoom"><img src="images/greenvalley.jpg" alt="Tree-lined roads of Green Valley township" loading="lazy"></div>
+                <div class="about__stat"><span class="disp num">40%</span><span>of every site kept as open, planted ground</span></div>
+            </div>
+            <div class="about__copy" data-reveal>
+                <p class="eyebrow">Who we are</p>
+                <h2 id="about-h" class="disp h-xl2">More than buildings. We build neighbourhoods.</h2>
+                <p class="lead">Goldeneye started in 2009 with one six-storey building in Mirpur. Seventeen years later, 2,500 families live in homes we planned around light, cross-ventilation and the people next door — and most of them came to us through a neighbour.</p>
+                <ul class="ticks">
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>BNBC 2020 earthquake-resistant design</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Third-party tested steel and concrete</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Fixed price, written into the deed</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>Owners’ association set up at handover</li>
+                </ul>
+                <a href="coming-soon.html?page=About" class="btn btn--line">Our story<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            </div>
+        </section>
+
+        <!-- ========== STATS ========== -->
+        <section class="stats" aria-labelledby="stats-h" id="stats">
+            <div class="stats__bg" aria-hidden="true"></div>
+            <div class="container stats__wrap">
+                <div class="stats__intro">
+                    <p class="eyebrow eyebrow--gold">Track record</p>
+                    <h2 id="stats-h" class="disp h-l">Seventeen years of keeping our word.</h2>
+                    <p>Numbers we can show you on site: delivered towers, registered deeds and families already living in a Goldeneye home.</p>
+                    <a href="properties.html" class="btn btn--gold">See our projects<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                </div>
+                <div class="stats__grid">
+                    <article class="stat"><span class="stat__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4m8-4v4M3 10h18"/></svg></span><p class="disp num stat__n"><span data-count="17">17</span></p><p class="stat__l">Years building in Dhaka</p><span class="stat__line" aria-hidden="true"></span></article>
+                    <article class="stat"><span class="stat__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span><p class="disp num stat__n"><span data-count="12">12</span></p><p class="stat__l">Projects handed over</p><span class="stat__line" aria-hidden="true"></span></article>
+                    <article class="stat"><span class="stat__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.6 3-6 7-6s7 2.4 7 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M22 20c0-2.8-1.8-4.8-4.5-5.6"/></svg></span><p class="disp num stat__n"><span data-count="2500" data-sep="1">2,500</span><b>+</b></p><p class="stat__l">Families living in a Goldeneye home</p><span class="stat__line" aria-hidden="true"></span></article>
+                    <article class="stat"><span class="stat__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 3v18"/></svg></span><p class="disp num stat__n"><span data-count="3.1" data-dec="1">3.1</span><b class="stat__u">M</b></p><p class="stat__l">Square feet delivered</p><span class="stat__line" aria-hidden="true"></span></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== AMENITIES BENTO ========== -->
+        <section class="section container" aria-labelledby="amen-h" id="amenities">
+            <div class="sec-head" data-reveal>
+                <h2 id="amen-h" class="disp h-xl2 narrow">Everything you need, a lift ride away.</h2>
+                <p class="sec-note">Shared spaces are planned with the building, not added later — and handed to the owners’ association with a maintenance fund.</p>
+            </div>
+            <div class="bento">
+                <article class="bento__a bento__img zoom" tabindex="0">
+                    <img src="images/riviera.jpg" alt="Lakeside pool deck at Goldeneye Riviera" loading="lazy">
+                    <div class="bento__shade"></div>
+                    <div class="bento__cap"><h3 class="disp">Rooftop &amp; lakeside pools</h3><p>Heated, lifeguarded, with separate family and ladies’ hours.</p></div>
+                </article>
+                <article class="bento__card" tabindex="0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg><div><h3 class="disp">Fitness centre</h3><p>Cardio, free weights and a yoga studio, open 5am – 11pm.</p></div></article>
+                <article class="bento__card bento__card--sand" tabindex="0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><div><h3 class="disp">24/7 security</h3><p>Trained guards, 120+ CCTV cameras and access-card lifts.</p></div></article>
+                <article class="bento__b bento__img zoom" tabindex="0">
+                    <img src="images/greenvalley.jpg" alt="Green parks between plots in Green Valley" loading="lazy">
+                    <div class="bento__shade"></div>
+                    <div class="bento__cap"><h3 class="disp">Landscaped parks</h3><p>A 3-acre central lake park with jogging track.</p></div>
+                </article>
+                <article class="bento__card bento__card--ink" tabindex="0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div><h3 class="disp">Full backup power</h3><p>Generator for every flat, lift and pump, plus rooftop solar.</p></div></article>
+                <article class="bento__card" tabindex="0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="7" width="18" height="10" rx="3"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg><div><h3 class="disp">Covered parking</h3><p>One dedicated bay per flat, EV-ready wiring.</p></div></article>
+                <article class="bento__card" tabindex="0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg><div><h3 class="disp">Community hall</h3><p>For milad, wedding holud and AGMs — 250 guests.</p></div></article>
+                <article class="bento__card" tabindex="0"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="6" r="3"/><path d="M5 22v-4a7 7 0 0 1 14 0v4"/></svg><div><h3 class="disp">Kids’ play zone</h3><p>Soft-floored, shaded and in view of the lobby.</p></div></article>
+            </div>
+        </section>
+
+        <!-- ========== MASTER PLAN ========== -->
+        <section class="mp" aria-labelledby="mp-h" id="masterplan">
+            <div class="container mp__in">
+                <div class="mp__map" data-reveal>
+                    <img src="images/masterplan.jpg" alt="Green Valley township master plan: blocks around a central lake" loading="lazy">
+                    <div id="mp-spots"></div>
+                    <div class="mp__card" id="mp-card" aria-live="polite"></div>
+                </div>
+                <div class="mp__copy" data-reveal>
+                    <p class="eyebrow">Master plan · Green Valley</p>
+                    <h2 id="mp-h" class="disp h-xl3">A township drawn around a lake, not a car park.</h2>
+                    <p class="lead">42 bighas in Purbachal, split into 6 blocks of 3, 5 and 10 katha plots. 40-ft main roads, underground utilities, a school plot and a mosque — all on the RAJUK-approved layout.</p>
+                    <dl class="mp__facts">
+                        <div><dt>Total plots</dt><dd class="disp num">186</dd></div>
+                        <div><dt>Available</dt><dd class="disp num ok">20</dd></div>
+                        <div><dt>Open space</dt><dd class="disp num">38%</dd></div>
+                    </dl>
+                    <div class="btn-row">
+                        <a href="property.html?id=greenvalley#plots" class="btn btn--ink">Explore plots<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                        <a href="property.html?id=greenvalley#masterplan" class="btn btn--line">Full master plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== VIRTUAL TOUR ========== -->
+        <section class="tour" aria-labelledby="tour-h" id="tour">
+            <img src="images/tour.jpg" alt="Living room of the Riviera 3-bed show flat" loading="lazy">
+            <div class="tour__shade"></div>
+            <a href="coming-soon.html?page=Virtual%20tour" class="tour__play pulse" aria-label="Play the Riviera show-flat film"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></a>
+            <div class="container tour__in">
+                <div class="tour__copy">
+                    <p class="eyebrow eyebrow--light">Virtual tour · 4 min</p>
+                    <h2 id="tour-h" class="disp h-xl3">Walk through your future home before it’s built.</h2>
+                </div>
+                <div class="tour__side">
+                    <div class="tour__tags"><span>Living</span><span>Kitchen</span><span>Master bed</span><span>Balcony</span></div>
+                    <a href="coming-soon.html?page=360%C2%B0%20tour" class="btn btn--white">Open 360° tour<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONSTRUCTION TRACKER ========== -->
+        <section class="section container" aria-labelledby="trk-h" id="tracker">
+            <div class="sec-head" data-reveal>
+                <div><p class="eyebrow">Live construction tracker</p><h2 id="trk-h" class="disp h-xl2">See exactly where your home stands.</h2></div>
+                <div class="seg" role="tablist" aria-label="Project" id="trk-tabs"></div>
+            </div>
+            <div class="trk">
+                <div class="trk__main" id="trk-panel" role="tabpanel" aria-live="polite"></div>
+                <div class="trk__photos"><p class="trk__title">Latest photo updates</p><div id="trk-photos"></div></div>
+            </div>
+        </section>
+
+        <!-- ========== EMI CALCULATOR ========== -->
+        <section class="emi" id="emi" aria-labelledby="emi-h">
+            <div class="container emi__in">
+                <div class="emi__inputs">
+                    <div><p class="eyebrow">EMI &amp; payment plan</p><h2 id="emi-h" class="disp h-xl3">Know your monthly number before you visit.</h2></div>
+                    <div class="slider"><div class="slider__head"><label for="emi-price">Property price</label><output class="disp num" id="o-price" for="emi-price"></output></div><input id="emi-price" type="range" min="3000000" max="50000000" step="500000" value="11500000"><div class="slider__ends"><span>৳30 Lakh</span><span>৳5 Crore</span></div></div>
+                    <div class="slider"><div class="slider__head"><label for="emi-down">Down payment</label><output class="disp num" id="o-down" for="emi-down"></output></div><input id="emi-down" type="range" min="10" max="60" step="5" value="20"><div class="slider__ends"><span>10%</span><span>60%</span></div></div>
+                    <div class="emi__two">
+                        <div class="slider"><div class="slider__head"><label for="emi-yrs">Tenure</label><output class="disp num" id="o-yrs" for="emi-yrs"></output></div><input id="emi-yrs" type="range" min="5" max="25" step="1" value="15"></div>
+                        <div class="slider"><div class="slider__head"><label for="emi-rate">Interest rate</label><output class="disp num" id="o-rate" for="emi-rate"></output></div><input id="emi-rate" type="range" min="7" max="14" step="0.25" value="10"></div>
+                    </div>
+                    <p class="fine">Indicative only. Rates from our partner banks currently range 9.0–11.5% for home loans.</p>
+                </div>
+                <div class="emi__out tex">
+                    <div><p class="emi__lbl">Estimated monthly instalment</p><p class="disp num emi__big" id="o-emi" aria-live="polite"></p></div>
+                    <div><div class="emi__bar"><span id="o-bar"></span><span></span></div><div class="emi__legend"><span><i class="k-gold"></i>Principal</span><span><i class="k-blue"></i>Interest</span></div></div>
+                    <dl class="emi__rows">
+                        <div><dt>Loan amount</dt><dd class="num" id="o-loan"></dd></div>
+                        <div><dt>Total interest</dt><dd class="num" id="o-int"></dd></div>
+                        <div><dt>Total payable</dt><dd class="num gold" id="o-tot"></dd></div>
+                    </dl>
+                    <a href="#visit" class="btn btn--gold emi__cta">Get a detailed payment plan<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== JOURNEY ========== -->
+        <section class="section container" aria-labelledby="jr-h" id="journey">
+            <h2 id="jr-h" class="disp h-xl2 narrow" data-reveal>From first visit to keys in hand, in four steps.</h2>
+            <ol class="journey">
+                <li data-reveal><span class="journey__n disp num is-ink">1</span><h3 class="disp">Explore &amp; shortlist</h3><p>Compare projects, floor plans and real prices online. Save favourites to your wishlist.</p></li>
+                <li data-reveal><span class="journey__n disp num is-ink">2</span><h3 class="disp">Visit &amp; verify</h3><p>Free pickup for site visits. Bring your lawyer — we hand over the full document file.</p></li>
+                <li data-reveal><span class="journey__n disp num is-gold">3</span><h3 class="disp">Book &amp; sign</h3><p>Pay 10% booking money, sign a fixed-price agreement and get a payment schedule.</p></li>
+                <li data-reveal><span class="journey__n disp num">4</span><h3 class="disp">Move in</h3><p>A 140-point handover inspection, registration support and two years of warranty.</p></li>
+            </ol>
+        </section>
+
+        <!-- ========== NRB ========== -->
+        <section class="container nrb-wrap" aria-labelledby="nrb-h" id="nrb">
+            <div class="nrb" data-reveal>
+                <div class="nrb__img"><img src="images/nrb.jpg" alt="A family in Dhaka on a video call with a relative abroad" loading="lazy"><span>Buyers in 23 countries</span></div>
+                <div class="nrb__copy tex">
+                    <p class="eyebrow eyebrow--gold">NRB desk</p>
+                    <h2 id="nrb-h" class="disp h-xl3">Buying from abroad? Your home, without the flight.</h2>
+                    <ul>
+                        <li><b>Video site visits</b><span>Live walk-throughs on WhatsApp in your time zone.</span></li>
+                        <li><b>Digital documents</b><span>Review and e-sign the agreement from anywhere.</span></li>
+                        <li><b>Remittance-friendly plans</b><span>Instalments timed to your salary cycle, in BDT via banking channels.</span></li>
+                        <li><b>Power of attorney help</b><span>Templates and embassy guidance for registration.</span></li>
+                    </ul>
+                    <div class="btn-row"><a href="coming-soon.html?page=NRB%20desk" class="btn btn--white">Visit the NRB desk</a><a href="https://wa.me/8801700000000" class="btn btn--wa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp us</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PROMISE TABLE ========== -->
+        <section class="promise" aria-labelledby="pr-h" id="promise">
+            <div class="container promise__in">
+                <div class="promise__copy" data-reveal>
+                    <p class="eyebrow">The Goldeneye promise</p>
+                    <h2 id="pr-h" class="disp h-xl3">What’s in writing, not in the brochure.</h2>
+                    <p class="lead">Every line on the right is a clause in your sale agreement. Ask any developer for the same.</p>
+                </div>
+                <div class="promise__table" data-reveal>
+                    <table>
+                        <caption class="sr-only">Typical market practice compared with the Goldeneye promise</caption>
+                        <thead><tr><th scope="col"><span class="sr-only">Topic</span></th><th scope="col">Typical market practice</th><th scope="col" class="us">Goldeneye</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">Price</th><td>Escalation clauses for materials</td><td class="us">Fixed at booking, no escalation</td></tr>
+                            <tr><th scope="row">Delay</th><td>“Force majeure”, open-ended</td><td class="us">Monthly rent paid after 6-month grace</td></tr>
+                            <tr><th scope="row">Documents</th><td>Shown after booking</td><td class="us">Full title chain before booking</td></tr>
+                            <tr><th scope="row">Extra charges</th><td>Utility and parking added later</td><td class="us">All-inclusive, itemised upfront</td></tr>
+                            <tr><th scope="row">After handover</th><td>6 months, fittings only</td><td class="us">2 years fittings, 10 years structure</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TESTIMONIALS ========== -->
+        <section class="section container" aria-labelledby="tm-h" id="testimonials">
+            <h2 id="tm-h" class="eyebrow tm__h">What our homeowners say</h2>
+            <div class="tm">
+                <figure class="tm__quote" id="tm-quote" aria-live="polite"></figure>
+                <div class="tm__list" role="tablist" aria-label="Choose a testimonial" id="tm-list"></div>
+            </div>
+        </section>
+
+        <!-- ========== PARTNERS MARQUEE ========== -->
+        <section class="marquee" aria-label="Awards and partners">
+            <div class="marquee__track">
+                <div class="marquee__set">
+                    <span><i>★</i>Dhaka Property Awards 2025 — Best Residential Project</span><span>REHAB Member [No. 0000]</span><span>ISO 9001:2015 Quality Management</span><span>Northbridge Bank · Home loan partner</span><span>Delta Home Finance · Approved project</span><span>Riverline Bank · NRB mortgages</span><span><i>★</i>Green Building Council — Silver pre-certification</span><span>As featured in Dhaka Business Review</span>
+                </div>
+                <div class="marquee__set" aria-hidden="true">
+                    <span><i>★</i>Dhaka Property Awards 2025 — Best Residential Project</span><span>REHAB Member [No. 0000]</span><span>ISO 9001:2015 Quality Management</span><span>Northbridge Bank · Home loan partner</span><span>Delta Home Finance · Approved project</span><span>Riverline Bank · NRB mortgages</span><span><i>★</i>Green Building Council — Silver pre-certification</span><span>As featured in Dhaka Business Review</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== BOOK A SITE VISIT ========== -->
+        <section class="section container" aria-labelledby="visit-h" id="visit">
+            <div class="visit">
+                <div class="visit__side tex">
+                    <p class="eyebrow eyebrow--gold">Schedule a visit</p>
+                    <h2 id="visit-h" class="disp h-xl4">See it in person. We’ll pick you up.</h2>
+                    <ul>
+                        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>Confirmed within 2 hours</b><span>A relationship manager calls to confirm.</span></span></li>
+                        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>Free pickup inside Dhaka</b><span>Car from your home to the site and back.</span></span></li>
+                        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>No obligation</b><span>No booking pressure. Bring family and your lawyer.</span></span></li>
+                    </ul>
+                    <div class="visit__call"><p>Rather talk now?</p><a href="tel:+8801700000000" class="disp">+880 1700-000000</a><p>Sat–Thu, 10am–7pm</p></div>
+                </div>
+                <div class="visit__main">
+                    <div class="visit__done" id="visit-done" role="status" hidden>
+                        <span class="visit__check"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span>
+                        <h3 class="disp" id="done-title"></h3>
+                        <p id="done-text"></p>
+                        <button type="button" class="link-btn" id="visit-reset">Book another visit</button>
+                    </div>
+                    <form id="visit-form" novalidate>
+                        <div class="form-row">
+                            <div class="fld"><label for="v-name">Full name <b>*</b></label><input id="v-name" name="name" autocomplete="name" placeholder="e.g. Farhana Rahman" aria-describedby="v-name-e"><span class="err" id="v-name-e"></span></div>
+                            <div class="fld"><label for="v-phone">Phone <b>*</b></label><input id="v-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXX-XXXXXX" aria-describedby="v-phone-e"><span class="err" id="v-phone-e"></span></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="fld"><label for="v-email">Email <span class="opt">(optional)</span></label><input id="v-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="v-email-e"><span class="err" id="v-email-e"></span></div>
+                            <div class="fld"><label for="v-proj">Project</label><select id="v-proj" name="project"><option>Goldeneye Riviera</option><option>Goldeneye Green Valley</option><option>Goldeneye Heights</option><option>Goldeneye Orchid</option><option>Not sure yet</option></select></div>
+                        </div>
+                        <fieldset><legend>Visit type</legend><div class="vtype" id="v-type"></div></fieldset>
+                        <fieldset><legend>Date</legend><div class="days" id="v-days"></div></fieldset>
+                        <fieldset><legend>Time</legend><div class="slots" id="v-slots"></div></fieldset>
+                        <label class="consent"><input type="checkbox" id="v-consent" name="consent" aria-describedby="v-consent-e"><span>I agree to be contacted by Goldeneye about this visit by phone or WhatsApp.<span class="err" id="v-consent-e"></span></span></label>
+                        <button type="submit" class="btn btn--ink visit__go">Confirm my visit<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== NEWS ========== -->
+        <section class="section container news-sec" aria-labelledby="nw-h" id="news">
+            <div class="sec-head" data-reveal><h2 id="nw-h" class="disp h-xl3">Latest from Goldeneye</h2><a href="coming-soon.html?page=News" class="link-arrow">All news →</a></div>
+            <div class="news">
+                <a href="coming-soon.html?page=News" class="news__item" data-reveal><span class="news__img zoom"><img src="images/riviera.jpg" alt="Riviera towers rising above the lake" loading="lazy"></span><span class="news__meta">CONSTRUCTION · 28 OCT 2026</span><span class="news__t disp">Riviera Tower B tops out its 11th floor slab, two weeks early</span></a>
+                <a href="coming-soon.html?page=News" class="news__item" data-reveal><span class="news__img zoom"><img src="images/heights.jpg" alt="Goldeneye Heights at handover" style="object-position:center 20%" loading="lazy"></span><span class="news__meta">HANDOVER · 12 SEP 2026</span><span class="news__t disp">46 families receive keys at Goldeneye Heights, Bashundhara</span></a>
+                <a href="coming-soon.html?page=News" class="news__item" data-reveal><span class="news__img zoom"><img src="images/greenvalley.jpg" alt="Green Valley roads and plots" loading="lazy"></span><span class="news__meta">GUIDE · 20 AUG 2026</span><span class="news__t disp">Buying land in Purbachal: the 7 documents to check first</span></a>
+            </div>
+        </section>
+
+        <!-- ========== FAQ ========== -->
+        <section class="faq" aria-labelledby="faq-h" id="faq">
+            <div class="container faq__in">
+                <div class="faq__copy"><h2 id="faq-h" class="disp h-xl3">Questions buyers ask us first</h2><p>Can’t find yours? <a href="#visit">Ask a relationship manager</a>.</p></div>
+                <div class="faq__list">
+                    <details name="faq" open><summary>How do I know the land title is clean?<span class="plus" aria-hidden="true">+</span></summary><p>Before booking we give you the full document file: CS, SA, RS and BS khatian, mutation records, DCR, the 25-year title chain and the RAJUK approval letter. Your lawyer can verify them at the land office; we’ll arrange copies.</p></details>
+                    <details name="faq"><summary>What happens if handover is delayed?<span class="plus" aria-hidden="true">+</span></summary><p>After a 6-month grace period, we pay monthly rent compensation at the rate written in your agreement until keys are handed over.</p></details>
+                    <details name="faq"><summary>Are there hidden charges at handover?<span class="plus" aria-hidden="true">+</span></summary><p>No. Utility connections, parking and common-area costs are itemised in the price sheet. Only government registration fees and stamp duty are paid separately, and we show you the estimate upfront.</p></details>
+                    <details name="faq"><summary>Can I buy from abroad as an NRB?<span class="plus" aria-hidden="true">+</span></summary><p>Yes. Book by video call, sign digitally, pay through banking channels and appoint a family member by power of attorney for registration. Our NRB desk walks you through each step.</p></details>
+                    <details name="faq"><summary>Which banks give loans for your projects?<span class="plus" aria-hidden="true">+</span></summary><p>Our projects are pre-approved with several partner banks and housing finance companies, so loan processing is faster. We share the current list and rates when you enquire.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FINAL CTA ========== -->
+        <section class="cta tex" aria-labelledby="cta-h">
+            <img src="images/heights.jpg" alt="" aria-hidden="true" loading="lazy">
+            <div class="container cta__in">
+                <h2 id="cta-h" class="disp h-hero">Ready to find your <span>home</span>?</h2>
+                <p>Talk to a relationship manager today. No pressure, just honest answers.</p>
+                <div class="btn-row"><a href="#visit" class="btn btn--gold">Book a site visit</a><a href="tel:+8801700000000" class="btn btn--ghost">Call +880 1700-000000</a></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER (carried over from the previous design) ========== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__about">
+                    <a href="index.html" class="logo footer__logo" aria-label="Goldeneye Developers Limited — home">
+                        <svg class="logo__mark" width="40" height="40" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="11"/><path d="M8 22c4.5-6.5 8.6-9.5 13-9.5s8.5 3 13 9.5c-4.5 6.5-8.6 9.5-13 9.5S12.5 28.5 8 22z" fill="none" stroke="#C9A35C" stroke-width="2.2"/><circle cx="21" cy="22" r="4.6" fill="#C9A35C"/><path d="M21 6v4" stroke="#C9A35C" stroke-width="2.2" stroke-linecap="round"/></svg>
+                        <span class="logo__text"><span class="logo__name disp">Goldeneye</span><span class="logo__sub">Developers Limited</span></span>
+                    </a>
+                    <p class="footer__desc">Building premium residential spaces and planned communities across Dhaka since 2009. RAJUK approved, trusted by 2,500+ families.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+                        <a href="#" class="social-icon" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+                        <a href="#" class="social-icon" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#fff"/></svg></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    </div>
+                </div>
+                <nav class="footer__links" aria-label="Projects">
+                    <h4 class="footer__title">Projects</h4>
+                    <a href="property.html?id=heights">Goldeneye Heights</a>
+                    <a href="property.html?id=riviera">Goldeneye Riviera</a>
+                    <a href="property.html?id=greenvalley">Goldeneye Green Valley</a>
+                    <a href="property.html?id=orchid">Goldeneye Orchid</a>
+                    <a href="properties.html?project=Horizon">Goldeneye Horizon</a>
+                </nav>
+                <nav class="footer__links" aria-label="Quick links">
+                    <h4 class="footer__title">Quick Links</h4>
+                    <a href="coming-soon.html?page=About">About Us</a>
+                    <a href="coming-soon.html?page=Services">Services</a>
+                    <a href="#nrb">NRB Desk</a>
+                    <a href="#emi">EMI Calculator</a>
+                    <a href="coming-soon.html?page=Careers">Careers</a>
+                    <a href="#news">News &amp; Updates</a>
+                </nav>
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contact</h4>
+                    <p><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>House 42, Road 11, Block D<br>Bashundhara R/A, Dhaka 1229</p>
+                    <a href="tel:+8801700000000"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+880 1700-000000</a>
+                    <a href="mailto:info@goldeneyedev.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@goldeneyedev.com</a>
+                    <form class="footer__newsletter" id="newsletter" novalidate>
+                        <label for="newsletter-email">Stay Updated</label>
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your email address" id="newsletter-email" autocomplete="email" aria-describedby="newsletter-msg">
+                            <button type="submit" class="newsletter-btn" aria-label="Subscribe"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                        </div>
+                        <p class="newsletter-msg" id="newsletter-msg" role="status"></p>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Goldeneye Developers Limited. All rights reserved.</p>
+                <div class="footer__bottom-links"><a href="coming-soon.html?page=Privacy%20policy">Privacy Policy</a><a href="coming-soon.html?page=Terms%20%26%20conditions">Terms &amp; Conditions</a></div>
+            </div>
+        </div>
+        <img class="footer__city" src="images/city.svg" alt="" aria-hidden="true" loading="lazy">
+    </footer>
+
+    <!-- floating actions -->
+    <a href="https://wa.me/8801700000000" class="fab fab--wa" aria-label="Chat on WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+    <button type="button" class="fab fab--top" id="to-top" aria-label="Back to top" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button>
+    <nav class="quickbar" aria-label="Quick actions">
+        <a href="tel:+8801700000000">Call</a>
+        <a href="https://wa.me/8801700000000" class="wa">WhatsApp</a>
+        <a href="#visit" class="visit">Book visit</a>
+    </nav>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

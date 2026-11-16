@@ -1,0 +1,340 @@
+=====================================================================
+ GOLDENEYE DEVELOPERS — WINDOWS PC INSTALLATION GUIDE
+ (Next.js 16 + Payload CMS 3 + PostgreSQL)
+=====================================================================
+
+Ei guide follow korle zero theke ekta Windows PC-te site + admin panel
+cholbe. Protita step ordor moto korbe. Time lagbe approx 30-45 minute.
+
+Ki ki install hobe:
+  1. Node.js 22         (JavaScript runtime)
+  2. pnpm 9             (package manager)
+  3. PostgreSQL 17      (database)
+  4. Project dependencies (Next.js, Payload CMS etc. -- eta automatic
+     install hoy `pnpm install` e, alada kore Payload install korte hobe na)
+
+Final result:
+  Website : http://localhost:3000
+  Admin   : http://localhost:3000/admin
+
+
+---------------------------------------------------------------------
+ STEP 0 — Zip extract
+---------------------------------------------------------------------
+1. goldeneye-next.zip file-ta right click -> "Extract All".
+2. Short path e rakho, jemon:  C:\goldeneye-next
+   (Desktop ba onek lomba path e problem hote pare. OneDrive folder
+    avoid koro.)
+3. Folder structure emon hobe:
+      C:\goldeneye-next\
+         app\            <- main project (Next.js + Payload)
+         prototype\      <- demo data source (DELETE KORO NA)
+         SETUP.md
+         INSTALL_GUIDE_Windows.txt
+
+IMPORTANT: "prototype" folder "app" er pashe thakte hobe, na hole
+demo data import hobe na.
+
+
+---------------------------------------------------------------------
+ STEP 1 — Node.js 22 install
+---------------------------------------------------------------------
+1. Browser e jao: https://nodejs.org
+2. "LTS" ba version 22.x download koro (Windows Installer .msi, 64-bit).
+3. Installer run koro, sob "Next" -> "Next" -> Install. Default option
+   gulo thik ache. (Tools for native modules checkbox lagbe na.)
+4. Install shesh hole NOTUN PowerShell open koro:
+      Start menu -> "PowerShell" likhe search -> open
+5. Check koro:
+      node -v
+   Output moto hobe:  v22.x.x     (22 hole OK)
+   Jodi "node is not recognized" dey, PC restart kore abar try koro.
+
+Note: Node 22.16 e ekta "engine warning" dekhte pao -- eta ignore
+korte paro, project kaj kore.
+
+
+---------------------------------------------------------------------
+ STEP 2 — pnpm 9 install
+---------------------------------------------------------------------
+PowerShell e:
+      npm install -g pnpm@9
+Check:
+      pnpm -v
+   Output:  9.x.x
+
+Jodi "running scripts is disabled on this system" error ashe, ei
+command ekbar chalao, tarpor abar try koro:
+      Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+   (Y chepe Enter)
+
+
+---------------------------------------------------------------------
+ STEP 3 — PostgreSQL 17 install
+---------------------------------------------------------------------
+1. Jao: https://www.postgresql.org/download/windows/
+   -> "Download the installer" (EDB) -> Version 17 -> Windows x86-64.
+2. Installer run koro. Components: PostgreSQL Server, pgAdmin 4,
+   Command Line Tools -- sob tick rakho.
+3. Data directory default rakho.
+4. PASSWORD set korar screen e ekta password dao (jemon: MyPgPass123)
+   *** ei password ta kothao likhe rakho, pore lagbe. ***
+5. Port: 5432 (default, change koro na).
+6. Locale: default.
+7. Finish. Stack Builder khulle "Cancel" koro.
+
+Check (PowerShell e):
+      Get-Service postgresql*
+   Status "Running" thakle OK.
+
+
+---------------------------------------------------------------------
+ STEP 4 — Database "goldeneye" toiri
+---------------------------------------------------------------------
+Option A (pgAdmin diye, easy):
+  1. Start menu theke "pgAdmin 4" open koro (master password chaile
+     ekta set koro).
+  2. Left e Servers -> PostgreSQL 17 e click -> Step 3 er password dao.
+  3. "Databases" e right click -> Create -> Database...
+  4. Database name:   goldeneye      (lowercase, exactly)
+  5. Save.
+
+Option B (command line):
+  1. Start menu -> "SQL Shell (psql)" open koro.
+  2. Server, Database, Port, Username -- sob Enter chepe default rakho.
+  3. Password dao (Step 3 er).
+  4. Type koro:
+        CREATE DATABASE goldeneye;
+     Enter. "CREATE DATABASE" dekhle done.
+  5. \q likhe exit.
+
+
+---------------------------------------------------------------------
+ STEP 5 — .env file setup
+---------------------------------------------------------------------
+.env file e database password ar admin login thake. Eta ekta secret
+file, kauke pathabe na.
+
+PowerShell e project er app folder e jao:
+      cd C:\goldeneye-next\app
+
+.env toiri koro:
+      Copy-Item .env.example .env
+      notepad .env
+
+Notepad e emon dekhabe -- edit koro:
+
+      DATABASE_URL=postgres://postgres:MyPgPass123@localhost:5432/goldeneye
+      PAYLOAD_SECRET=ekta-onek-lomba-random-string-likhe-dao-48-char
+      SEED_ADMIN_EMAIL=admin@goldeneye.test
+      SEED_ADMIN_PASSWORD=Admin12345
+
+Explain:
+  DATABASE_URL        -> "MyPgPass123" er jaygay Step 3 er nijer
+                         password boshao.
+                         Password e special character (@ : / # ? %)
+                         thakle URL-encode korte hobe (jemon @ = %40).
+                         Sohoj upay: simple letter+number password.
+  PAYLOAD_SECRET      -> je kono lomba random text (kom kore 32 char).
+                         Eta login session secure kore.
+  SEED_ADMIN_EMAIL    -> admin panel e login korar email.
+  SEED_ADMIN_PASSWORD -> admin password. Kom kore 8 char, letter +
+                         number dui-i thakte hobe.
+
+File save koro (Ctrl+S), notepad close koro.
+
+
+---------------------------------------------------------------------
+ STEP 6 — Dependencies install (Next.js + Payload CMS etc.)
+---------------------------------------------------------------------
+app folder e thaka obosthay:
+      pnpm install
+
+Ekhane Next.js, Payload CMS, database adapter, sob package
+automatic download hoy. Internet lagbe, 3-10 minute lagte pare.
+Warning dekhale ignore koro, "ERR" na hole OK.
+
+Jodi pnpm install fail kore:
+  - Internet check koro, abar chalao.
+  - "node_modules" folder thakle delete kore abar chalao.
+
+
+---------------------------------------------------------------------
+ STEP 7 — Database tables toiri (migration)
+---------------------------------------------------------------------
+      pnpm payload migrate
+
+Ei command database e sob table toiri kore. Output e "Migrated" ba
+"done" dekhbe. Prothom bar chalaleo, abar chalaleo problem nai.
+
+Jodi "password authentication failed" ashe -> .env er DATABASE_URL
+er password ta thik koro (Step 5).
+Jodi "database goldeneye does not exist" ashe -> Step 4 abar koro.
+Jodi "ECONNREFUSED" ashe -> PostgreSQL service running ache kina
+check koro (Step 3 er check command).
+
+
+---------------------------------------------------------------------
+ STEP 8 — Demo data load
+---------------------------------------------------------------------
+      pnpm seed
+
+Eta ekta admin user (.env er email/password diye), 5 ta project,
+12 ta listing, news, FAQ, testimonial, stats ar image load kore.
+Last e "[seed] done" dekhbe.
+
+(Abar seed korle: content already thakle skip kore. Sob muche abar
+ fresh demo chaile:  pnpm seed --reset )
+
+
+---------------------------------------------------------------------
+ STEP 9 — Server start
+---------------------------------------------------------------------
+      pnpm dev
+
+"Ready" ba "Local: http://localhost:3000" dekhbe. Ei PowerShell
+window BONDHO KORO NA -- server ei window te cholche.
+
+Browser e jao:
+  Website : http://localhost:3000
+  Admin   : http://localhost:3000/admin
+
+Prothom bar page load hote 10-30 second lagte pare (compile hoy).
+
+Server bondho korte:  PowerShell e Ctrl+C.
+Porer bar abar chalate:
+      cd C:\goldeneye-next\app
+      pnpm dev
+
+
+---------------------------------------------------------------------
+ STEP 10 — Admin panel e login
+---------------------------------------------------------------------
+1. http://localhost:3000/admin
+2. Email    : .env er SEED_ADMIN_EMAIL     (admin@goldeneye.test)
+   Password : .env er SEED_ADMIN_PASSWORD
+3. Login korle Dashboard dekhbe: Users, Customers, Leads, Projects,
+   Listings, News, FAQs, Testimonials, Stats, Media, Site Settings.
+
+
+---------------------------------------------------------------------
+ STEP 11 — Kivabe test korbe (quick checklist)
+---------------------------------------------------------------------
+A) Notun listing add:
+   Admin -> Listings -> Create New -> Title, Project, Category, Size,
+   Price likho, Images e "Add Image" -> "Choose from existing" ->
+   ekta image select -> "Publish changes".
+   Tarpor http://localhost:3000/en/properties e dekho, listing show
+   korbe.
+
+B) Notun project add: Admin -> Projects -> Create New.
+
+C) Customer register: http://localhost:3000/en/register
+   (Name, Email, Password -- password e kom kore 8 char, letter +
+   number). Tarpor /en/login e login, /en/account e account page.
+
+D) Lead (enquiry) test: home page er "Book a Site Visit" form ba
+   property page er callback form fill koro. Phone format:
+   01XXXXXXXXX (BD number, jemon 01712345678).
+   Admin -> Leads e lead dekhbe.
+
+E) Bangla: page er upore "EN / বাংলা" toggle click koro.
+   Admin e Bangla content likhte: Locale (upore dan e) English theke
+   "Bengali" select koro.
+
+F) Roles: Admin -> Users -> Create New diye alada role-er user
+   banao (sales-agent, content-editor, viewer etc.) -- kar ki access
+   ache ta test korte.
+
+
+---------------------------------------------------------------------
+ DEMO DATA RESET (admin panel theke)
+---------------------------------------------------------------------
+Browser e jao:  http://localhost:3000/admin/demo-data
+(Sudhu super-admin dekhte pabe.)
+  - "Import demo data"  -> content na thakle demo data load kore.
+  - "Reset to demo"     -> sob project/listing/news/FAQ/media/lead
+                           muche fresh demo data abar load kore.
+                           (Users ar Customers delete hoy na.)
+Test er pore sob kichu clean kore abar shuru korte eta use koro.
+
+
+---------------------------------------------------------------------
+ EKE-BARE SHORTCUT (optional)
+---------------------------------------------------------------------
+Step 5-8 automatic korte (PostgreSQL ar database toiri thakle):
+      cd C:\goldeneye-next\app
+      powershell -ExecutionPolicy Bypass -File scripts\setup.ps1
+Prothom bar eta .env toiri kore ber hoye jay. .env edit kore
+(Step 5) abar ekhi command chalao: install + migrate + seed hoye jabe.
+Tarpor:  pnpm dev
+
+
+---------------------------------------------------------------------
+ COMMON PROBLEMS (Troubleshooting)
+---------------------------------------------------------------------
+1. "pnpm is not recognized"
+   -> Notun PowerShell window kholo, ba abar:  npm install -g pnpm@9
+
+2. "Port 3000 is already in use"
+   -> Onno kono app 3000 use korche. Oita bondho koro, ba:
+        pnpm dev --port 3001
+      tarpor http://localhost:3001 e jao.
+
+3. "password authentication failed for user postgres"
+   -> .env er DATABASE_URL e PostgreSQL password vul. Thik koro.
+
+4. "database goldeneye does not exist"
+   -> Step 4 abar koro.
+
+5. "relation ... does not exist" ba page e error
+   -> Migration chalano hoyni:  pnpm payload migrate
+
+6. Admin login hocche na
+   -> Email/password .env er SEED_ADMIN_* er sathe milao.
+      .env change korle pnpm seed abar chalate hobe NA -- admin
+      ager password-e thake. Password bhule gele pgAdmin diye
+      "users" table delete kore  pnpm seed  abar chalao, ba
+      Payload "Forgot password" use koro.
+   -> 5 bar vul password dile account kichu khon lock hoy; 10-15
+      minute pore try koro.
+
+7. Images show korche na / "Cannot find media"
+   -> pnpm seed --reset chalao (media abar toiri hobe).
+
+8. "EBUSY" / "EPERM" error pnpm install e
+   -> Antivirus temporary off kore try koro, ba folder C:\ root e
+      rakho.
+
+9. Engine warning (Node wanted ^22.x)
+   -> Ignore koro, kaj kore.
+
+10. Page e style bhenge giyeche / purono dekhay
+   -> Browser e Ctrl+Shift+R (hard refresh).
+
+11. Server e kono change dekha jacche na
+   -> PowerShell e Ctrl+C diye server bondho kore abar  pnpm dev.
+
+
+---------------------------------------------------------------------
+ USEFUL COMMANDS (app folder theke)
+---------------------------------------------------------------------
+  pnpm dev                  -> development server chalu
+  pnpm seed                 -> demo data load (khali thakle)
+  pnpm seed --reset         -> sob content muche demo data abar load
+  pnpm payload migrate      -> database table update
+  pnpm build                -> production build check
+  pnpm start                -> production mode e chalu (build er pore)
+
+
+---------------------------------------------------------------------
+ NOTE / SECURITY
+---------------------------------------------------------------------
+- Eta local test version. Public internet e deploy korar age
+  PAYLOAD_SECRET alada, strong password, HTTPS ar production hosting
+  setup lagbe.
+- .env file kauke pathabe na, zip e dite hole age delete koro.
+- WhatsApp/SMS, 3D tour, 18 corporate page, 5 microsite ekhono
+  baki (development roadmap e ache).
+
+=====================================================================

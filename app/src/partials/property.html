@@ -1,0 +1,191 @@
+
+    <div id="pp">
+    <section class="phero" aria-labelledby="p-title">
+        <img class="phero__img kb" id="h-img" src="images/greenvalley.jpg" alt="">
+        <div class="phero__shade"></div>
+        <div class="container phero__in">
+            <div class="phero__top">
+                <nav class="crumbs crumbs--light" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="properties.html">Projects</a><span aria-hidden="true">/</span><span aria-current="page" id="h-crumb"></span></nav>
+                <div class="phero__tools">
+                    <button type="button" class="ptool" id="t-save" aria-pressed="false" aria-label="Save project"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></svg></button>
+                    <button type="button" class="ptool" id="t-share" aria-label="Share this page"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg></button>
+                    <button type="button" class="ptool hide-m" id="t-print" aria-label="Print"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></button>
+                    <a href="properties.html" class="ptool ptool--txt hide-m" id="t-compare">+ Compare</a>
+                </div>
+            </div>
+            <div class="phero__bottom">
+                <div>
+                    <div class="phero__tags" id="h-tags"></div>
+                    <h1 id="p-title" class="disp h-hero phero__h"></h1>
+                    <p class="phero__loc"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span id="h-loc"></span></p>
+                </div>
+                <div class="btn-row">
+                    <a href="#plots" class="btn btn--gold" id="h-cta">Explore<svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                    <a href="#enquire" class="btn btn--ghost">Request a callback</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container"><dl class="facts" id="facts"></dl></div>
+
+    <nav class="subnav" aria-label="On this page"><div class="container subnav__in noscroll" id="subnav"></div></nav>
+
+    <div class="container pp__layout">
+        <main id="main" class="pp__main">
+            <section id="overview" aria-labelledby="ov-h" class="ps">
+                <h2 id="ov-h" class="disp h-l"></h2>
+                <p class="lead" id="ov-p"></p>
+                <div class="stat-grid" id="ov-stats"></div>
+                <div><h3 class="disp sub-h">Amenities</h3><ul class="amen" id="ov-amen"></ul></div>
+            </section>
+
+            <section id="plots" aria-labelledby="pl-h" class="ps">
+                <div class="ps__head">
+                    <div><p class="eyebrow" id="pl-eyebrow">Plot explorer</p><h2 id="pl-h" class="disp h-l"></h2></div>
+                    <p class="avail" aria-live="polite" id="pl-avail"></p>
+                </div>
+                <div class="ps__ctl">
+                    <div class="chips" id="pl-blocks" role="tablist" aria-label="Block"></div>
+                    <div class="chips" id="pl-sizes" role="group" aria-label="Size"></div>
+                </div>
+                <div class="explorer">
+                    <div class="explorer__map" id="pl-map"></div>
+                    <aside class="sel tex" id="sel" aria-live="polite" aria-label="Selected"></aside>
+                </div>
+            </section>
+
+            <section id="calc" aria-labelledby="cl-h" class="ps calc">
+                <div class="calc__in">
+                    <div><p class="eyebrow">Price &amp; instalments</p><h2 id="cl-h" class="disp"></h2></div>
+                    <div class="calc__meta"><span id="c-meta"></span><label id="c-cornerwrap" class="check"><input type="checkbox" id="c-corner">Corner premium (+10%)</label></div>
+                    <div class="rng"><div class="rng__l"><label for="c-down">Down payment</label><output class="num" id="o-down" for="c-down"></output></div><input id="c-down" type="range" min="20" max="60" step="5" value="20"></div>
+                    <div class="rng"><div class="rng__l"><label for="c-months">Instalment period</label><output class="num" id="o-months" for="c-months"></output></div><input id="c-months" type="range" min="6" max="48" step="6" value="24"></div>
+                    <p class="fine">Interest-free developer instalments. Registration and stamp duty are paid separately to the government.</p>
+                </div>
+                <div class="calc__out tex" aria-live="polite">
+                    <div><p class="calc__k">Monthly instalment</p><p class="disp num calc__big" id="c-monthly"></p></div>
+                    <dl class="calc__dl" id="c-dl"></dl>
+                </div>
+            </section>
+
+            <section id="masterplan" aria-labelledby="mpl-h" class="ps" hidden>
+                <div class="ps__head"><h2 id="mpl-h" class="disp h-l">Master plan</h2><button type="button" class="btn btn--sm btn--line" data-brochure>Download brochure (PDF)</button></div>
+                <div class="mp2">
+                    <div class="mp2__view" id="mp-view"><div class="mp2__stage" id="mp-stage"><img id="mp-img" alt=""></div></div>
+                    <div class="mp2__zoom"><button type="button" id="mp-in" aria-label="Zoom in">+</button><button type="button" id="mp-out" aria-label="Zoom out">−</button></div>
+                    <div class="mp2__cap"><p class="disp" id="mp-t"></p><p id="mp-d"></p></div>
+                </div>
+            </section>
+
+            <section id="layouts" aria-labelledby="ly-h" class="ps" hidden>
+                <div class="ps__head"><h2 id="ly-h" class="disp h-l">Plot layouts</h2><div class="chips" id="ly-tabs" role="tablist" aria-label="Plot size"></div></div>
+                <div class="lay">
+                    <div class="lay__draw" id="ly-draw" role="img"></div>
+                    <dl class="lay__dl" id="ly-dl"></dl>
+                </div>
+            </section>
+
+            <section id="gallery" aria-labelledby="gl-h" class="ps">
+                <div class="ps__head"><h2 id="gl-h" class="disp h-l">Gallery</h2><div class="chips" id="gl-tabs" role="group" aria-label="Category"></div></div>
+                <div class="gal" id="gal"></div>
+                <div class="drone"><div class="drone__img zoom"><img id="dr-img" alt=""><a href="coming-soon.html?page=Drone film" class="drone__play pulse" aria-label="Play drone film"><svg width="24" height="24" viewBox="0 0 24 24" fill="#0D1330" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></a></div>
+                    <div class="drone__txt"><p class="disp">Fly over the site</p><p>A 3-minute drone film shot in October 2026, plus a 360° walk-through.</p><div class="btn-row"><a href="coming-soon.html?page=Drone film" class="btn btn--sm btn--ink">Watch film</a><a href="coming-soon.html?page=360° tour" class="btn btn--sm btn--line">360° tour</a></div></div></div>
+            </section>
+
+            <section id="progress" aria-labelledby="pg-h" class="ps">
+                <div class="ps__head"><h2 id="pg-h" class="disp h-l">Construction progress</h2><p class="avail"><span class="num" id="pg-pct"></span> complete · <span id="pg-note"></span></p></div>
+                <div class="bar-track bar-track--lg" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="pg-bar"><i></i></div>
+                <ol class="tl" id="pg-tl"></ol>
+            </section>
+
+            <section id="location" aria-labelledby="lc-h" class="ps">
+                <h2 id="lc-h" class="disp h-l">Location &amp; neighbourhood</h2>
+                <div class="loc">
+                    <div class="loc__map" role="img" aria-label="Sketch map of the project and nearby road">
+                        <i class="m-road" style="left:0;right:0;top:55%;height:16px"></i><i class="m-road" style="top:0;bottom:0;left:30%;width:9px"></i><i class="m-water" style="left:62%;top:10%;width:30%;height:26%"></i><i class="m-park" style="left:8%;top:12%;width:20%;height:30%"></i>
+                        <span class="m-lbl" style="left:4%;top:60%" id="lc-road"></span>
+                        <span class="loc__pin"><b id="lc-pin"></b><i></i></span>
+                        <a href="#" id="lc-dir" target="_blank" rel="noopener" class="loc__dir">Get directions ↗</a>
+                    </div>
+                    <ul class="near" id="lc-near"></ul>
+                </div>
+            </section>
+
+            <section id="documents" aria-labelledby="dc-h" class="ps docs tex">
+                <div class="ps__head"><div><p class="eyebrow eyebrow--gold">Specifications &amp; legal</p><h2 id="dc-h" class="disp">The paperwork, out in the open.</h2></div><a href="coming-soon.html?page=Buyer checklist" class="btn btn--sm btn--gold">Buyer’s checklist (PDF)</a></div>
+                <ul class="docs__list" id="dc-list"></ul>
+            </section>
+
+            <section id="payment" aria-labelledby="pp-h" class="ps">
+                <h2 id="pp-h" class="disp h-l">Payment plans</h2>
+                <div class="plans" id="pp-plans"></div>
+                <p class="fine">Land and home loans available from <strong>Northbridge Bank</strong>, <strong>Delta Home Finance</strong> and <strong>Riverline Bank</strong> (placeholder partners).</p>
+            </section>
+
+            <section class="ps why" aria-labelledby="wb-h">
+                <div class="why__a"><h2 id="wb-h" class="disp"></h2><ul id="wb-list"></ul></div>
+                <div class="why__b tex"><p class="eyebrow eyebrow--gold">From our owners</p><blockquote class="disp" id="wb-q"></blockquote><p id="wb-by"></p>
+                    <div class="why__stats"><div><b class="disp num">17</b><span>years</span></div><div><b class="disp num">12</b><span>handed over</span></div><div><b class="disp num">2,500+</b><span>families</span></div></div></div>
+            </section>
+
+            <section class="ps reserve tex tex--gold" aria-labelledby="rs-h">
+                <div><p class="num reserve__n"><span class="pulse"></span><span id="rs-n"></span></p><h2 id="rs-h" class="disp">Hold it for 72 hours, free.</h2></div>
+                <p role="status" class="reserve__ok" id="rs-ok" hidden></p>
+                <form id="rs-form" class="reserve__form" novalidate>
+                    <label>Name<input data-lpignore="true" data-1p-ignore data-form-type="other" name="name" autocomplete="name" placeholder="Your name"></label>
+                    <label>Phone<input data-lpignore="true" data-1p-ignore data-form-type="other" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="01XXX-XXXXXX"></label>
+                    <button type="submit" class="btn btn--ink" id="rs-btn">Hold it</button>
+                    <p class="err" id="rs-err" role="alert"></p>
+                </form>
+            </section>
+
+            <section id="faq" aria-labelledby="fq-h" class="ps"><h2 id="fq-h" class="disp h-l">FAQ</h2><div class="faq2" id="fq-list"></div></section>
+        </main>
+
+        <aside id="enquire" class="enq" aria-labelledby="eq-h">
+            <div><h2 id="eq-h" class="disp">Interested?</h2><p>A relationship manager will call within 2 hours.</p></div>
+            <div><div class="bar-track"><i id="eq-bar"></i></div><p class="num enq__n" id="eq-n"></p></div>
+            <p role="status" class="reserve__ok" id="eq-ok" hidden></p>
+            <form id="eq-form" novalidate>
+                <label>Full name<input data-lpignore="true" data-1p-ignore data-form-type="other" name="name" autocomplete="name" placeholder="Your name"></label>
+                <label>Phone<input data-lpignore="true" data-1p-ignore data-form-type="other" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="01XXX-XXXXXX"></label>
+                <label>Message <span>(optional)</span><textarea name="msg" rows="3"></textarea></label>
+                <p class="err" id="eq-err" role="alert"></p>
+                <button type="submit" class="btn btn--ink">Request a callback</button>
+            </form>
+            <div class="enq__row"><a href="tel:+8801700000000" class="btn btn--sm btn--line">Call</a><a href="https://wa.me/8801700000000" class="btn btn--sm btn--wa" target="_blank" rel="noopener">WhatsApp</a></div>
+            <a href="index.html#visit" class="enq__visit">Prefer a site visit? Book one →</a>
+        </aside>
+    </div>
+
+    <section class="container ym" aria-labelledby="ym-h"><h2 id="ym-h" class="disp h-l">You may also like</h2><div class="ym__grid" id="ym"></div></section>
+    </div>
+
+    <nav class="pbar" aria-label="Quick actions"><span><small>From</small><b class="num" id="pb-from"></b></span><a href="https://wa.me/8801700000000" aria-label="WhatsApp" class="pbar__wa" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></a><a href="#enquire" class="btn btn--gold btn--sm">Enquire</a></nav>
+
+    <div class="dlg dlg--dark" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+        <button type="button" class="round-btn dlg__x" data-close aria-label="Close" data-autofocus>×</button>
+        <img id="lb-img" alt="">
+        <div class="lb__bar"><button type="button" class="round-btn" id="lb-prev" aria-label="Previous photo">‹</button><span class="num" id="lb-cap"></span><button type="button" class="round-btn" id="lb-next" aria-label="Next photo">›</button></div>
+    </div>
+
+    <div class="dlg" id="brochure" role="dialog" aria-modal="true" aria-labelledby="br-h" hidden>
+        <form class="dlg__box brochure" id="br-form" novalidate>
+            <div class="brochure__h"><h2 id="br-h" class="disp"></h2><button type="button" class="round-btn" data-close aria-label="Close">×</button></div>
+            <p>32 pages: plans, price list, documents and payment plans. We’ll send it to your WhatsApp too.</p>
+            <label>Name<input data-lpignore="true" data-1p-ignore data-form-type="other" name="name" autocomplete="name" placeholder="Your name" data-autofocus></label>
+            <label>Phone / WhatsApp<input data-lpignore="true" data-1p-ignore data-form-type="other" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="01XXX-XXXXXX"></label>
+            <p class="err" id="br-err" role="alert"></p>
+            <button type="submit" class="btn btn--ink">Get the brochure</button>
+        </form>
+    </div>
+    <div class="toast" id="toast" role="status" hidden></div>
+
+
+    <!-- ========== FOOTER (carried over from the previous design) ========== -->
+<!--FOOTER-->
+
+    <!-- floating actions -->
+    <a href="https://wa.me/8801700000000" class="fab fab--wa" aria-label="Chat on WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></a>
+    <button type="button" class="fab fab--top" id="to-top" aria-label="Back to top" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg></button>

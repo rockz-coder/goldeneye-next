@@ -1,0 +1,47 @@
+/* Goldeneye v2 — custom dropdowns (built by js/select.js around every native <select>). */
+.sel2 { position: relative; width: 100%; min-width: 0; }
+.sel2__native { position: absolute !important; left: 0; bottom: 0; width: 1px !important; height: 1px !important; padding: 0 !important; margin: 0 !important; border: 0 !important; opacity: 0; pointer-events: none; }
+.sel2__btn { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 46px; padding: 0 14px; border: 1px solid var(--line-2); border-radius: 12px; background: #fff; color: var(--ink); font-weight: 500; font-size: 15px; text-align: left; transition: border-color .25s, box-shadow .25s, background-color .25s; }
+.sel2__btn:hover:not(:disabled) { border-color: var(--ink); }
+.sel2__btn:focus-visible, .sel2.is-open .sel2__btn { outline: 0; border-color: var(--ink); }
+.sel2__btn:disabled { opacity: .5; cursor: default; }
+.sel2__val { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sel2__btn.is-placeholder .sel2__val { color: var(--muted); }
+.sel2__chev { flex: none; transition: transform .3s var(--ease); }
+.sel2.is-open .sel2__chev { transform: rotate(180deg); }
+
+/* inside the hero finder: borderless, the white field card provides the hover state */
+.field .sel2__btn { height: auto; min-height: 26px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; font-weight: 600; font-size: 15.5px; }
+.field .sel2__btn:focus-visible { outline: 0; }
+.field .sel2__btn.is-placeholder .sel2__val { color: var(--ink); }
+.field .sel2__chev { color: var(--muted); }
+/* booking form */
+.fld .sel2__btn { height: 52px; padding: 0 16px; border: 1.5px solid var(--line); }
+.fld .sel2__btn:hover:not(:disabled), .fld .sel2.is-open .sel2__btn { border-color: var(--ink); }
+/* properties sort */
+.sort .sel2 { width: 210px; }
+.sort .sel2__btn { height: 44px; }
+
+/* the list */
+.sel2__pop { position: fixed; z-index: 300; display: flex; flex-direction: column; padding: 6px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 28px 56px -24px rgba(13, 19, 48, .45); animation: gd-fade .25s var(--ease) both; }
+.sel2__pop[hidden] { display: none; }
+.sel2__pop ul { margin: 0; padding: 0; list-style: none; overflow-y: auto; overscroll-behavior: contain; outline: 0; }
+.sel2__pop li[role=option] { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 12px; border-radius: 10px; font-size: 14.5px; line-height: 1.3; cursor: pointer; color: var(--ink); transition: background-color .2s; }
+.sel2__pop li[role=option].is-act { background: var(--paper); }
+.sel2__pop li[role=option][aria-selected=true] { background: rgba(201, 163, 92, .18); font-weight: 600; }
+.sel2__pop li[role=option][aria-selected=true].is-act { background: rgba(201, 163, 92, .3); }
+.sel2__pop li[aria-disabled=true] { opacity: .45; cursor: default; }
+.sel2__tick { flex: none; color: var(--gold-ink); opacity: 0; }
+.sel2__pop li[aria-selected=true] .sel2__tick { opacity: 1; }
+.sel2__grp { padding: 12px 12px 4px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.sel2__search { display: none; align-items: center; gap: 8px; margin-bottom: 6px; padding: 0 12px; height: 42px; border: 1px solid var(--line-2); border-radius: 10px; color: var(--muted); }
+.sel2__pop.has-search .sel2__search { display: flex; }
+.sel2__search:focus-within { border-color: var(--ink); }
+.sel2__search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font-size: 14.5px; color: var(--ink); }
+.sel2__none { margin: 0; padding: 14px 12px; font-size: 14px; color: var(--muted); }
+.sel2__none[hidden] { display: none; }
+@media (max-width: 860px) {
+    .sort .sel2 { flex: 1; width: auto; }
+    .sel2__pop li[role=option] { padding: 13px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .sel2__chev { transition: none; } .sel2__pop { animation: none; } }
